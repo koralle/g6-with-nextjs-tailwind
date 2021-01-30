@@ -1,23 +1,48 @@
 {
   "compilerOptions": {
+    // .js, .jsxファイルもimport可能にする
     "allowJs": true,
+    // ファイルを ECMAScript の strict モードで解釈し、各ファイルへ”use strict”を出力することを保証します。
     "alwaysStrict": true,
+    // すべてのインポートに対して Namespace オブジェクトを生成することによって、CommonJS と ES Modules 間で相互運用可能なコードを出力します。
     "esModuleInterop": true,
+    // TypeScript はプログラムがディスク上の大文字小文字と異なるファイルをインクルードしようとした場合にエラーを発生させます。
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
+    // .tsxファイルをそのまま.jsxファイルとして出力する
     "jsx": "preserve",
-    "lib": ["dom", "es2017"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "module": "esnext",
+    // モジュール解決の方法を’node’（Node.js）または’classic’（TypeScript pre-1.6）から設定します。おそらく利用する必要はないでしょう。
     "moduleResolution": "node",
     "noEmit": true,
+    // switch 文において、次の case へ処理を持ち越した場合にエラーを報告します
     "noFallthroughCasesInSwitch": true,
+    // 利用されていないローカル変数について、エラーを報告します。
     "noUnusedLocals": true,
+    // 利用されていない関数のパラメータについて、エラーを報告します。
     "noUnusedParameters": true,
     "resolveJsonModule": true,
+    // 型システムの精度を犠牲にすることで、コンパイル実行時間を削減します。
     "skipLibCheck": true,
+    // strictフラグは、プログラムの正しさを強く保証するための幅広い型チェックの挙動を有効化します
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    }
   },
-  "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
